@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../../css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
     <style>
         body {
             background: #eee;
@@ -25,17 +25,15 @@
             margin: 0px 14px;
             text-align: center;
             top: 70px;
-			text-align: center;
         }
         #opciones-pregunta li, .chk-rsp{
-            border: 5px #48c9b0 solid;
+            border: 3px #48c9b0 solid;
             border-radius: 5px;
             -moz-border-radius: 5px%;
             -webkit-border-radius: 5px%;
             padding: 10px;
             margin-bottom: 15px;
             text-align: center;
-			margin-right:10px;
         }
         ul{
             list-style: none;
@@ -54,18 +52,19 @@
     
 
 
-    <script src="js/vendor/jquery-1.11.0.min.js"></script>
-    <script src="js/constantes.js"></script>
+    <script src="../../js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="../../js/constantes.js"></script>
     <script>
         //Variable para almacenar y llamar las preguntas
-        var preguntas;// = JSON.parse(window.localStorage.getItem('preguntas'));
+        var preguntas;   //= JSON.parse(window.localStorage.getItem('preguntas'));
         $(function(){
             //Se consultan las preguntas del servidor 
             if(preguntas==null){
+                
                 $.ajax({
                     url: URL+'Pregunta',
                     type: 'get',
-                    dataType : 'json',
+                    //dataType : 'json',
                     success: function(data){
                         console.log(data);
                         preguntas = data;
